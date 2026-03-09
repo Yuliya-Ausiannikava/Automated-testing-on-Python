@@ -1,49 +1,62 @@
-s1 = 'www.my_site.com#about'
-print (s1.replace('#','/'))
-print ('=======================')
+"""
+Этот файл содержит код, который выполняет все пункты домашней работы №6
+"""
 
-a = 'run'
-b = 'work'
-c = 'sing'
-d = 'ing'
-print (a+d+',', b+d+',', c+d)
-print ('========================')
+# Заменить символ “#” на символ “/” в строке 'www.my_site.com#about'
+S1 = 'www.my_site.com#about'
+print(S1.replace('#','/'))
+print('=======================')
 
-name = 'Ivanou Ivan'
-n1 = name.split()
+#Напишите программу, которая добавляет ‘ing’ к словам
+A = 'run'
+B = 'work'
+C = 'sing'
+D = 'ing'
+print(A+D+',', B+D+',', C+D)
+print('========================')
+
+#В строке “Ivanou Ivan” поменяйте местами слова => "Ivan Ivanou"
+NAME = 'Ivanou Ivan'
+n1 = NAME.split()
 # print(n1)
 n2 = (n1[::-1])
 print(' '.join(n2))
 print('========================')
 
-name = ' My name is Yuliya '
-print(name.lstrip())
-print(name.rstrip())
+#Напишите программу которая удаляет пробел в начале, в конце строки
+NAME1 = ' My name is Yuliya '
+print(NAME1.lstrip())
+print(NAME1.rstrip())
 print('========================')
 
-city = 'pARiS'
-print(city.capitalize())
+#Исправьте данное имя собственное так, чтобы оно соответствовало этому утверждению. "pARiS" >> "Paris"
+CITY = 'pARiS'
+print(CITY.capitalize())
 print('========================')
 
-str1 = 'Robin Singh'
-str2 = 'I love arrays they are my favorite'
-print(str1.split())
-print(str2.split())
+#Перевести строку в список
+STR1 = 'Robin Singh'
+STR2 = 'I love arrays they are my favorite'
+print(STR1.split())
+print(STR2.split())
 print('========================')
 
-list1 = ['Robin', 'Singh']
-w = 'Welcome'
-air = 'airport'
-j1 = ' '.join(list1)
-print(f'Hello {j1}! {w} to {air}')
+#Напечатайте текст: “Hello, Robin Singh! Welcome to airport”
+LIST1 = ['Robin', 'Singh']
+W = 'Welcome'
+AIR = 'airport'
+J1 = ' '.join(LIST1)
+print(f'Hello {J1}! {W} to {AIR}')
 print('========================')
 
-list2 = ["I", "love", "arrays", "they", "are", "my", "favorite"]
-j2 = ' '.join(list2)
-print(j2)
+#Сделать строку из списка
+LIST2 = ["I", "love", "arrays", "they", "are", "my", "favorite"]
+J2 = ' '.join(LIST2)
+print(J2)
 print('========================')
 
-list3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-list3[3] = 12
-del list3[6]
-print(list3)
+#Создайте список из 10 элементов и отредактировать
+LIST3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+LIST3[3] = 12
+del LIST3[6]
+print(LIST3)
