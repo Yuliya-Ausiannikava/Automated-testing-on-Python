@@ -17,10 +17,10 @@ while True:
 
     BULLS = 0
     COWS = 0
-    for char in range(len(GUESS)):
-        if GUESS[char] == NUMBER[char]:
+    for i, char in enumerate(GUESS):
+        if char == NUMBER[i]:
             BULLS += 1
-        elif GUESS[char] in NUMBER and GUESS[char] != NUMBER[char]:
+        elif char in NUMBER and char != NUMBER[i]:
             COWS += 1
 
     print(f'Bulles: {BULLS},cows: {COWS}')
