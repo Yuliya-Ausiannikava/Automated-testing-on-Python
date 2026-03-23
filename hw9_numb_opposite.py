@@ -1,5 +1,5 @@
 """
-This is the code to complete the "Sequence" task.
+This is the code to complete the "Number opposite" task.
 """
 
 
