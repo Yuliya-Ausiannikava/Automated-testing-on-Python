@@ -11,7 +11,7 @@ while True:
 
 while True:
     GUESS = str(input('The number has been chosen. Try to guess it: '))
-    if len(set(GUESS)) != 4 or not GUESS.isdigit():
+    if len(set(GUESS)) != 4 or not GUESS.isdigit() or len(GUESS) != 4:
         print('Please, enter a 4-digit number without repeating digits:')
         continue
 
