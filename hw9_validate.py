@@ -21,9 +21,6 @@ def solution(number):
     else:
         return False
 
-    if len(numb_str) == 0:
-        return False
-
     if not numb_str.isdigit():
         if numb_str.startswith('-'):
             return False
