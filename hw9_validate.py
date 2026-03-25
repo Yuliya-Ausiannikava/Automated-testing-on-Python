@@ -11,7 +11,7 @@ def solution(number):
     """
 
     # We are running checks on the correctness of the entered data
-    if number is None:
+    if not number:
         return False
 
     if isinstance(number, int):
