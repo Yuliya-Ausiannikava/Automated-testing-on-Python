@@ -8,7 +8,7 @@ def res_number(func):
         result = func(*args, **kwargs)
         if not isinstance(result, (int, float)):
             print("Error. The result of a function can only be a number.")
-            return None
+            raise ValueError(...)
         return result
     return wrapper
 
