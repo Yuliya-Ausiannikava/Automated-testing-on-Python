@@ -21,15 +21,15 @@ class Bank:
         return print(f'{self.name}, registration was successful.')
 
     def open_deposit_account(self, client_id, start_balance, years):
+        if not self.client_is_registered:
+            self.deposit_is_open = False
+            return "Only a registered client can open a deposit."
+
+        self.deposit_is_open = True
         self.start_balance = start_balance
         self.years = years
         self.client_id = client_id
-        if self.client_is_registered is True:
-            self.deposit_is_open = True
-            return print(f'{self.name}, you have opened a deposit.')
-        else:
-            self.deposit_is_open = False
-            return print("Only a registered client can open a deposit.")
+        return f'{self.name}, you have opened a deposit.'
 
     def calc_deposit_interest_rate(self, client_id):
         self.client_id = client_id
