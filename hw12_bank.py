@@ -46,8 +46,7 @@ class Bank:
         if self.deposit_is_open is True:
             total = self.calc_deposit_interest_rate(client_id)
             return total
-        else:
-            return None
+        return None
 
 
 CLIENT_ID = "0000001"
