@@ -32,15 +32,15 @@ class Bank:
         return f'{self.name}, you have opened a deposit.'
 
     def calc_deposit_interest_rate(self, client_id):
+
+        if not self.deposit_is_open:
+            return None
+
         self.client_id = client_id
         percent_years = 0.10
         month = self.years * 12
         percent_month = percent_years / 12
-        final_amount = self.start_balance * (1 + percent_month) ** month
-        if self.deposit_is_open is True:
-            return round(final_amount, 2)
-        else:
-            return None
+        return round(self.start_balance * (1 + percent_month) ** month, 2)
 
     def close_deposit(self, client_id):
         if self.deposit_is_open is True:
