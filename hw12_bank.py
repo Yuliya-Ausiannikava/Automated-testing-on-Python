@@ -51,10 +51,53 @@ class Bank:
 
 CLIENT_ID = "0000001"
 
-bank = Bank()
-bank.register_client(client_id=CLIENT_ID, name="Siarhei")
-bank.open_deposit_account(client_id=CLIENT_ID, start_balance=1000, years=1)
+# bank = Bank()
+# bank.register_client(client_id=CLIENT_ID, name="Siarhei")
+# bank.open_deposit_account(client_id=CLIENT_ID, start_balance=1000, years=1)
+#
+# assert bank.calc_deposit_interest_rate(client_id=CLIENT_ID) == 1104.71, \
+#     "Income from the deposit was calculated incorrectly"
+# bank.close_deposit(client_id=CLIENT_ID)
 
-assert bank.calc_deposit_interest_rate(client_id=CLIENT_ID) == 1104.71, \
-    "Income from the deposit was calculated incorrectly"
-bank.close_deposit(client_id=CLIENT_ID)
+
+class Person:
+    def __init__(self, currency, amount):
+        self.currency = currency
+        self.amount = amount
+
+
+class CurrencyConverter:
+
+    def __init__(self):
+        self.exchange_rates = {'BYN': 1.0, 'USD': 2.9364, 'EUR': 3.3894, 'RUB': 3.7179}
+
+    def exchange_currency(self, currency, amount, to_currency='BYN'):
+
+        if currency not in self.exchange_rates:
+            return print("Unknown currency")
+        if to_currency not in self.exchange_rates:
+            return print("Unknown currency")
+
+        total_byn = amount * self.exchange_rates[currency]
+        total_other = total_byn / self.exchange_rates[to_currency]
+        return round(total_other, 2), to_currency
+
+
+converter = CurrencyConverter()
+
+vasya = Person('USD', 10)
+petya = Person('EUR', 5)
+
+# Если валюта не задана, то конвертация происходит в BYN:
+assert converter.exchange_currency(vasya.currency, vasya.amount) == (29.36, "BYN"), \
+    'Incorrect conversion value'
+assert converter.exchange_currency(petya.currency, petya.amount) == (16.95, "BYN"), \
+    'Incorrect conversion value'
+
+# Конвертация из BYN в заданную валюту:
+assert converter.exchange_currency(vasya.currency, vasya.amount, 'EUR') == (8.66, "EUR"), \
+    'Incorrect conversion value'
+assert converter.exchange_currency(petya.currency, petya.amount, 'USD') == (5.77, "USD"), \
+    'Incorrect conversion value'
+assert converter.exchange_currency(petya.currency, petya.amount, 'RUB') == (4.56, "RUB"), \
+    'Incorrect conversion value'
