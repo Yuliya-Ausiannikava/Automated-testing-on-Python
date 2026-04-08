@@ -51,13 +51,7 @@ class Bank:
 
 CLIENT_ID = "0000001"
 
-# bank = Bank()
-# bank.register_client(client_id=CLIENT_ID, name="Siarhei")
-# bank.open_deposit_account(client_id=CLIENT_ID, start_balance=1000, years=1)
-#
-# assert bank.calc_deposit_interest_rate(client_id=CLIENT_ID) == 1104.71, \
-#     "Income from the deposit was calculated incorrectly"
-# bank.close_deposit(client_id=CLIENT_ID)
+bank = Bank()
 
 
 class Person:
