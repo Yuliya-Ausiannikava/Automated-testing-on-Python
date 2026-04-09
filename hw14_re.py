@@ -8,8 +8,8 @@ import re
 with open('hw14_text.txt', 'r', encoding='utf-8') as file:
     for line in file:
         dt = re.findall(r'\d{2}.\d{2}.\d{4}', line)
-        dt_str = ', '.join(dt)
-        print(dt_str)
+        DT_STR = ', '.join(dt)
+        print(DT_STR)
 print('______________________________________')
 
 # Checks the correctness of passwords

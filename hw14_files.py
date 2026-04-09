@@ -22,20 +22,20 @@ except FileNotFoundError:
 
 # Total number of students
 with open('students.txt', 'r', encoding='utf-8') as file:
-    count_students = 0
+    COUNT_STUDENTS = 0
     for line in file:
         if not line:
             continue
-        count_students += 1
+        COUNT_STUDENTS += 1
 
 # Number of students in each group and average score for the group
 with open('students.txt', 'r', encoding='utf-8') as file:
-    count_students_in_group_1 = 0
-    count_students_in_group_2 = 0
-    count_students_in_group_3 = 0
-    grade_students_1 = 0
-    grade_students_2 = 0
-    grade_students_3 = 0
+    COUNT_STUDENTS_IN_GROUP_1 = 0
+    COUNT_STUDENTS_IN_GROUP_2 = 0
+    COUNT_STUDENTS_IN_GROUP_3 = 0
+    GRADE_STUDENTS_1 = 0
+    GRADE_STUDENTS_2 = 0
+    GRADE_STUDENTS_3 = 0
 
     for line in file:
         line = line.strip()
@@ -46,27 +46,27 @@ with open('students.txt', 'r', encoding='utf-8') as file:
         except ValueError:
             print('Invalid grade. It is not a number.')
         if group_number == '1':
-            count_students_in_group_1 += 1
-            grade_students_1 += grade
+            COUNT_STUDENTS_IN_GROUP_1 += 1
+            GRADE_STUDENTS_1 += grade
         elif group_number == '2':
-            count_students_in_group_2 += 1
-            grade_students_2 += grade
+            COUNT_STUDENTS_IN_GROUP_2 += 1
+            GRADE_STUDENTS_2 += grade
         elif group_number == '3':
-            count_students_in_group_3 += 1
-            grade_students_3 += grade
+            COUNT_STUDENTS_IN_GROUP_3 += 1
+            GRADE_STUDENTS_3 += grade
     try:
-        average_group_rating_1 = round(grade_students_1 / count_students_in_group_1, 1)
-        average_group_rating_2 = round(grade_students_2 / count_students_in_group_2, 1)
-        average_group_rating_3 = round(grade_students_3 / count_students_in_group_3, 1)
+        average_group_rating_1 = round(GRADE_STUDENTS_1 / COUNT_STUDENTS_IN_GROUP_1, 1)
+        average_group_rating_2 = round(GRADE_STUDENTS_2 / COUNT_STUDENTS_IN_GROUP_2, 1)
+        average_group_rating_3 = round(GRADE_STUDENTS_3 / COUNT_STUDENTS_IN_GROUP_3, 1)
     except ZeroDivisionError:
         print('Division by zero is impossible.')
 
 with open('students.txt', 'a', encoding='utf-8') as file:
     file.write('\nInformation about student groups:\n')
-    file.write(f'Total number of students: {count_students}\n')
-    file.write(f'Total number of students in group 1: {count_students_in_group_1}\n')
-    file.write(f'Total number of students in group 2: {count_students_in_group_2}\n')
-    file.write(f'Total number of students in group 3: {count_students_in_group_3}\n')
+    file.write(f'Total number of students: {COUNT_STUDENTS}\n')
+    file.write(f'Total number of students in group 1: {COUNT_STUDENTS_IN_GROUP_1}\n')
+    file.write(f'Total number of students in group 2: {COUNT_STUDENTS_IN_GROUP_2}\n')
+    file.write(f'Total number of students in group 3: {COUNT_STUDENTS_IN_GROUP_3}\n')
     file.write(f'Average rating in group 1: {average_group_rating_1}\n')
     file.write(f'Average rating in group 2: {average_group_rating_2}\n')
     file.write(f'Average rating in group 3: {average_group_rating_3}\n')
