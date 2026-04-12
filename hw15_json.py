@@ -1,3 +1,7 @@
+"""
+A program that reads data from a file and displays information about the club with the most wins.
+"""
+
 import json
 
 data_football_clubs = {
@@ -18,14 +22,21 @@ data_football_clubs = {
     }
 }
 
-with open("dataFC.json", "w") as file:
+with open("dataFC.json", "w", encoding='utf-8') as file:
     json.dump(data_football_clubs, file)
 
-with open("dataFC.json", "r") as file:
-    data = json.load(file)
+
+def parse_json(data):
     max_win = 0
+    best_club = None
     for key in data:
         win = data[key]["victories"]
-        if win > max_win:
-            max_win = win
-            print(f"The team with the most wins:\nFC: {data[key]["name"]},\ncountry: {data[key]["country"]},\nnumber of victories: {data[key]["victories"]}")
+        max_win = max(max_win, win)
+        if win == max_win:
+            best_club = data[key]
+    return print(best_club)
+
+
+with open("dataFC.json", "r", encoding='utf-8') as file:
+    data_FC = json.load(file)
+    parse_json(data_FC)
