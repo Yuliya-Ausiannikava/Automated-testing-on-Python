@@ -4,32 +4,33 @@ Programs that work using regular expressions.
 
 import re
 
+
 # Finds all dates in the text in the format "dd.mm.yyyy"
-with open('hw14_text.txt', 'r', encoding='utf-8') as file:
+def find_date(file):
     for line in file:
         dt = re.findall(r'\d{2}.\d{2}.\d{4}', line)
-        DT_STR = ', '.join(dt)
-        print(DT_STR)
-print('______________________________________')
+        dt_str = ', '.join(dt)
+        return print(dt_str)
+
+
+with open('hw14_text.txt', 'r', encoding='utf-8') as text_file:
+    find_date(text_file)
+print('________________________________________________________________')
+
 
 # Checks the correctness of passwords
-password = input('Enter your password: ')
+def validate_password(password):
+    pattern = re.compile(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$')
+    if re.search(pattern, password):
+        return print('Password is valid')
+    else:
+        return print('The password must be at least 8 characters long '
+                     'and contain at least one uppercase letter, '
+                     'one lowercase letter, and one number.')
 
-if len(password) < 8:
-    print('Password is too short')
-if not re.search(r'[a-z]', password):
-    print('Password must contain at least one lowercase letter')
-if not re.search(r'[A-Z]', password):
-    print('Password must contain at least one uppercase letter')
-if not re.search(r'[0-9]', password):
-    print('Password must contain at least one number')
-if re.search(r'\s', password):
-    print('Password cannot contain spaces')
-if re.search(r'[^a-zA-Z0-9]', password):
-    print('Password can only contain letters and numbers')
-else:
-    print('Password is valid')
-print('______________________________________')
+
+validate_password("Afjkf7758")
+print('________________________________________________________________')
 
 # Corrects repetitions of words in the text
 MESSAGE = ('Довольно распространённая ошибка ошибка — это лишний повтор повтор слова слова. '
