@@ -8,8 +8,8 @@ name: Katya, group number: 2, grade: 5
 Information about student groups:
 Total number of students: 7
 Total number of students in group 1: 2
-Total number of students in group 2: 3
-Total number of students in group 3: 2
 Average rating in group 1: 8.5
+Total number of students in group 2: 3
 Average rating in group 2: 7.0
+Total number of students in group 3: 2
 Average rating in group 3: 7.5
