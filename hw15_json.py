@@ -2,6 +2,7 @@
 A program that reads data from a file and displays information about the club with the most wins.
 """
 
+from pprint import pprint
 import json
 
 data_football_clubs = {
@@ -22,10 +23,11 @@ data_football_clubs = {
     }
 }
 
-with open("dataFC.json", "w", encoding='utf-8') as file:
-    json.dump(data_football_clubs, file)
+with open("dataFC.json", "w", encoding='utf-8') as file_fc:
+    json.dump(data_football_clubs, file_fc)
 
 
+# Finds the team with the most wins
 def parse_json(data):
     max_win = 0
     best_club = None
@@ -34,9 +36,15 @@ def parse_json(data):
         max_win = max(max_win, win)
         if win == max_win:
             best_club = data[key]
-    return print(best_club)
+    pprint(best_club, width=50)
+    return best_club
 
 
-with open("dataFC.json", "r", encoding='utf-8') as file:
-    data_FC = json.load(file)
-    parse_json(data_FC)
+# Reads the file and calls the "parse_json" function
+def read_json(filename):
+    with open(filename, 'r', encoding='utf-8') as file:
+        data_fc = json.load(file)
+        return parse_json(data_fc)
+
+
+read_json('dataFC.json')

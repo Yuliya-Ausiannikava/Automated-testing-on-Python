@@ -27,6 +27,7 @@ with open("info_about_books.yaml", 'w', encoding='utf-8') as book_file:
     yaml.dump(info_books, book_file)
 
 
+# Reads a file
 def read_yaml(file_name):
     try:
         with open(file_name, 'r', encoding='utf-8') as f:
@@ -38,6 +39,7 @@ def read_yaml(file_name):
         return {}
 
 
+# Adding a book to a file
 def add_books(book_name, author, year, file_name):
     books_from_file = read_yaml(file_name)
     if books_from_file:
