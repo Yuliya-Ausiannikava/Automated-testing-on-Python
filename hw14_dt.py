@@ -22,5 +22,5 @@ if today > format_date:
     print("The date entered is in the past")
 elif today < format_date:
     print("The date entered is in the future")
-elif today == format_date:
+else:
     print("The date entered is today")
