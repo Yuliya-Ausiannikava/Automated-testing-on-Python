@@ -1,0 +1,22 @@
+<products>
+    <product>
+       <name>apple "Golden"</name>
+       <price>10.25</price>
+       <quantity>5</quantity>
+    </product>
+    <product>
+       <name>chocolate "Alenka"</name>
+       <price>7.20</price>
+       <quantity>2</quantity>
+    </product>
+    <product>
+       <name>bread</name>
+       <price>3.87</price>
+       <quantity>1</quantity>
+    </product>
+    <product>
+       <name>eggs</name>
+       <price>5.09</price>
+       <quantity>10</quantity>
+    </product>
+</products>
