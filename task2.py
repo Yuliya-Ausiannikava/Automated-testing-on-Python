@@ -3,8 +3,7 @@ def square(x):
     return x ** 2
 
 
-result = square(2)
-print(result)
+print(square(2))
 
 
 # The function determines whether a number is even or odd
@@ -15,5 +14,4 @@ def number(y):
         return "Number odd"
 
 
-result = number(2)
-print(result)
+print(number(2))
