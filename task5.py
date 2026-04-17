@@ -5,9 +5,7 @@ def palindrome(num):
     :return: boolean
     """
     num = str(num)
-    if num == num[::-1]:
-        return True
-    return False
+    return num == num[::-1]
 
 
 assert palindrome(121) is True
