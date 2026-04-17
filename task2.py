@@ -7,11 +7,10 @@ print(square(2))
 
 
 # The function determines whether a number is even or odd
-def number(y):
+def is_even(y):
     if y % 2 == 0:
-        return "Number even"
-    else:
-        return "Number odd"
+        return True
+    retunr False
 
 
 print(number(2))
