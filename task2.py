@@ -10,7 +10,7 @@ print(square(2))
 def is_even(y):
     if y % 2 == 0:
         return True
-    retunr False
+    return False
 
 
 print(number(2))
