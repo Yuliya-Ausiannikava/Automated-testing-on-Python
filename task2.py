@@ -13,4 +13,4 @@ def is_even(y):
     return False
 
 
-print(number(2))
+print(is_even(2))
