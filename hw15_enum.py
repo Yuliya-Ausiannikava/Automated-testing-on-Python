@@ -14,7 +14,7 @@ class OrderStatus(Enum):
 
 
 class Order:
-    def __init__(self, order_id: int, status: OrderStatus.PENDING):
+    def __init__(self, order_id: int, status: OrderStatus = OrderStatus.PENDING):
         self.order_id = order_id
         self.status = status
 
