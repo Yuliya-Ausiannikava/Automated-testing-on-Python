@@ -3,7 +3,7 @@ Test module for a library application
 """
 
 import unittest
-from hw_12 import hw12_library
+from archive.hw_12 import hw12_library
 
 from logging_config import get_logger
 

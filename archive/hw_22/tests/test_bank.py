@@ -1,6 +1,6 @@
 import datetime
 import pytest
-from hw_12 import hw12_bank
+from archive.hw_12 import hw12_bank
 from logging_config import get_logger
 
 logger = get_logger(__name__)
