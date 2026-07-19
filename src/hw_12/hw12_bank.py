@@ -4,7 +4,7 @@ A class has been created for calculating profit from a bank deposit with monthly
 Classes for currency conversion have been created.
 """
 
-from logging_config import get_logger
+from src.logging_config import get_logger
 
 logger = get_logger("logger_bank_app")
 

@@ -18,3 +18,9 @@ venv/
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
+
+# Folders created when installing a package in development mode
+*.egg-info/
+*.egg-info/*
+build/
+dist/

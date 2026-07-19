@@ -83,3 +83,42 @@ exclude = [
 ]
 
 extend-ignore = ["E501", "E402"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = [
+    "portfolio",
+]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "smoke: Дымовые тесты для проверки критической функциональности",
+    "regression: Регрессионные тесты",
+    "auth: Тесты авторизации",
+    "positive: Позитивные тест-кейсы",
+    "negative: Негативные тест-кейсы",
+    "delete: Тесты удаления",
+    "get: Тесты получения данных",
+    "patch: Тесты частичного обновления",
+    "post: Тесты создания",
+    "put: Тесты полного обновления",
+    "bank: Тесты банковского приложения",
+    "registration: Тесты регистрации",
+    "deposit: Тесты депозитов",
+    "interest: Тесты процентов",
+    "close: Тесты закрытия депозитов",
+    "person: Тесты управления клиентами",
+    "converter: Тесты конвертации валют",
+    "reservation_book: Тесты бронирования книг",
+    "cancel_reservation: Тесты отмены бронирования",
+    "receiving_book: Тесты получения книг",
+    "return_book: Тесты возврата книг",
+    "cart: Тесты корзины",
+    "checkout: Тесты оформления заказа",
+    "login: Тесты входа в систему",
+]

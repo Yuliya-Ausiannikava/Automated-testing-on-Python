@@ -2,7 +2,7 @@
 A program to assist the library was written. Two classes were created.
 """
 
-from logging_config import get_logger
+from src.logging_config import get_logger
 
 logger = get_logger("logger_library_app")
 

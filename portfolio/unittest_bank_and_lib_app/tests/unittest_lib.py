@@ -3,9 +3,9 @@ Test module for a library application
 """
 
 import unittest
-from archive.hw_12 import hw12_library
+from src.hw_12 import hw12_library
 
-from logging_config import get_logger
+from src.logging_config import get_logger
 
 logger = get_logger("test_lib")
 
